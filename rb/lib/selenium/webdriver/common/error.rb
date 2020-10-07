@@ -369,8 +369,8 @@ module Selenium
       def self.const_missing(const_name)
         super unless DEPRECATED_ERRORS.key?(const_name)
         if DEPRECATED_ERRORS[const_name]
-          WebDriver.logger.deprecate("Selenium::WebDriver::Error::#{const_name}",
-                                     "#{DEPRECATED_ERRORS[const_name]} (ensure the driver supports W3C WebDriver specification)")
+          #WebDriver.logger.deprecate("Selenium::WebDriver::Error::#{const_name}",
+          #                           "#{DEPRECATED_ERRORS[const_name]} (ensure the driver supports W3C WebDriver specification)")
           DEPRECATED_ERRORS[const_name]
         else
           WebDriver.logger.deprecate("Selenium::WebDriver::Error::#{const_name}")
